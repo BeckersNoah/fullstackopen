@@ -36,8 +36,6 @@ const App = () => {
   }
 
   const voteAnecedote = () => {
-    console.log(votes)
-    console.log(votes.indexOf(Math.max(...votes)))
     const newvotes = [...votes]
     newvotes[selected] += 1
     setVotes(newvotes)
@@ -52,7 +50,7 @@ const App = () => {
       <Button onClick={RandomAnecedote} text='next anecdote'/>
       <h1>Anecdote with the most votes</h1>
       <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
-      <p>has {votes[selected]} votes</p>
+      <p>has {votes[votes.indexOf(Math.max(...votes))]} votes</p>
     </div>
   )
 }
